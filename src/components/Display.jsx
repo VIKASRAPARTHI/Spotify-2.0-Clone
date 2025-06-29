@@ -2,7 +2,6 @@ import React, {useEffect, useRef} from 'react'
 import { Route, Routes, useLocation} from 'react-router-dom'
 import DisplayHome from './DisplayHome'
 import DisplayAlbum from './DisplayAlbum'
-import Search from './Search'
 import Lyrics from './Lyrics'
 import Library from './Library'
 import Genres from './Genres'
@@ -10,7 +9,7 @@ import Music from './Music'
 import Podcasts from './Podcasts'
 import { albumsData } from '../assets/assets'
 
-const Display = () => {
+const Display = ({ searchQuery, setSearchQuery }) => {
 
     const displayRef = useRef();
     const location = useLocation();
@@ -27,11 +26,10 @@ const Display = () => {
     })
 
   return (
-    <div ref={displayRef} className='w-[100%] m-2 px-6 pt-4 rounded bg-[#121212] text-white overflow-y-auto scrollbar-hide lg:w-[75%] lg:ml-0'>
+    <div ref={displayRef} className='w-[100%] m-2 rounded bg-[#121212] text-white overflow-y-auto scrollbar-hide lg:w-[75%] lg:ml-0 relative'>
       <Routes>
-        <Route path='/' element={<DisplayHome/>} />
+        <Route path='/' element={<DisplayHome searchQuery={searchQuery} setSearchQuery={setSearchQuery} />} />
         <Route path='/album/:id' element={<DisplayAlbum/>} />
-        <Route path='/search' element={<Search/>} />
         <Route path='/lyrics' element={<Lyrics/>} />
         <Route path='/library' element={<Library/>} />
         <Route path='/genres' element={<Genres/>} />

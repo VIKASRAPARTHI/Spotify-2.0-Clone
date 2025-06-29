@@ -15,7 +15,7 @@ const Genres = () => {
   ]
 
   return (
-    <div>
+    <div className='px-6'>
       <h1 className='text-3xl font-bold mb-8'>Browse by Genre</h1>
 
       <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-8'>

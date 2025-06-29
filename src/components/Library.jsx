@@ -19,7 +19,7 @@ const Library = () => {
   ]
 
   return (
-    <div>
+    <div className='px-6'>
       <div className='mb-8'>
         <h1 className='text-3xl font-bold mb-6'>Your Library</h1>
         

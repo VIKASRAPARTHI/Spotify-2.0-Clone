@@ -1,5 +1,4 @@
 import React, { useContext } from 'react'
-import Navbar from './Navbar'
 import { useParams } from 'react-router-dom'
 import { albumsData, assets, songsData } from '../assets/assets';
 import { PlayerContext } from '../context/PlayerContext';
@@ -10,8 +9,7 @@ const DisplayAlbum = () => {
     const albumData = albumsData[id];
     const {playwithId} = useContext(PlayerContext)
   return (
-    <>
-        <Navbar/>
+    <div className='px-6'>
         <div className='mt-10 flex gap-8 flex-col md:flex-row md:items-end'>
             <img className='w-48 rounded' src={albumData.image} alt=""/>
             <div className='flex flex-col'>
@@ -48,7 +46,7 @@ const DisplayAlbum = () => {
                 </div>
             ))
         }
-    </>
+    </div>
   )
 }
 

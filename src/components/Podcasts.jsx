@@ -42,7 +42,7 @@ const Podcasts = () => {
   ]
 
   return (
-    <div>
+    <div className='px-6'>
       <h1 className='text-3xl font-bold mb-8'>Podcasts</h1>
 
       <div className='mb-8'>

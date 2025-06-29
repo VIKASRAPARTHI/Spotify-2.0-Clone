@@ -6,7 +6,7 @@ const Music = () => {
   const { playwithId, track } = useContext(PlayerContext)
 
   return (
-    <div>
+    <div className='px-6'>
       <h1 className='text-3xl font-bold mb-8'>All Music</h1>
 
       <div className='mb-6'>
@@ -17,7 +17,7 @@ const Music = () => {
           <img className='m-auto w-4' src={assets.clock_icon} alt=""/>
         </div>
         <hr className='border-[#a7a7a7] mb-4'/>
-        
+
         {songsData.map((song, index) => (
           <div 
             key={song.id}
@@ -31,7 +31,7 @@ const Music = () => {
                 <p className={`font-semibold ${track.id === song.id ? 'text-green-500' : 'text-white'}`}>
                   {song.name}
                 </p>
-                <p className='text-sm text-[#a7a7a7]'>Artist Name</p>
+                <p className='text-sm text-[#a7a7a7]'>{song.desc}</p>
               </div>
             </div>
             <p className='text-[15px]'>Sample Album</p>

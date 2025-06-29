@@ -6,14 +6,17 @@ import Queue from './components/Queue'
 import Login from './components/Login'
 import FullscreenPlayer from './components/FullscreenPlayer'
 import MiniPlayer from './components/MiniPlayer'
+import TopNavbar from './components/TopNavbar'
 import { PlayerContext } from './context/PlayerContext'
 import { useAuth } from './context/AuthContext'
+import { assets } from './assets/assets'
 
 const App = () => {
   const {audioRef, track} = useContext(PlayerContext);
   const { isAuthenticated, login, checkAuth } = useAuth();
   const [isFullscreen, setIsFullscreen] = useState(false)
   const [isMiniPlayer, setIsMiniPlayer] = useState(false)
+  const [searchQuery, setSearchQuery] = useState('')
 
   useEffect(() => {
     checkAuth();
@@ -25,9 +28,10 @@ const App = () => {
 
   return (
     <div className = 'h-screen bg-black'>
-      <div className='h-[90%] flex'>
+      <TopNavbar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
+      <div className='h-[90%] flex pt-20'>
         <Sidebar/>
-        <Display/>
+        <Display searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
       </div>
         <Player 
           onFullscreen={() => setIsFullscreen(true)}
