@@ -2,6 +2,8 @@
 
 A modern, feature-rich Spotify clone built with React.js, featuring music streaming, playlists, search functionality, and enhanced user experience.
 
+![Screenshot](https://github.com/VIKASRAPARTHI/Spotify-2.0-Clone/blob/main/public/Screenshot%202025-07-02%20223207.png)
+
 ## Features
 
 ### **Core Music Features**
